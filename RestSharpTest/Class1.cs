@@ -9,8 +9,17 @@ using System.Net;
 
 namespace RestSharpTest
 {
+   
+
     public class TrelloTest
     {
+
+        public static IRestClient _client;
+        [OneTimeSetUp]
+        public static void InitRestClient()
+        {
+            _client = new RestClient("https://api.trello.com");
+        }
         [Test]
         public async Task CheckTrelloAPI()
         {
